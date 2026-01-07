@@ -1,0 +1,13 @@
+
+{% extends 'tienda/base.html' %}
+
+{% block title %}Dirección{% endblock %}
+
+{% block content %}
+    <h1>{{ object.calle }}, {{ object.ciudad }}</h1>
+    <p>Estado: {{ object.estado }}</p>
+    <p>País: {{ object.pais }}</p>
+    <p>Código Postal: {{ object.codigo_postal }}</p>
+    <a href="{% url 'direccion-update' object.pk %}">Editar</a>
+    <a href="{% url 'direccion-delete' object.pk %}">Eliminar</a>
+{% endblock %}

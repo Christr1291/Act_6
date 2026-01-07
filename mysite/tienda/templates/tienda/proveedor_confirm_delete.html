@@ -1,0 +1,22 @@
+{% extends 'tienda/base.html' %}
+
+{% block title %}Eliminar Proveedor{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h1 class="card-title">Eliminar Proveedor</h1>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-danger" role="alert">
+            <p>¿Estás seguro de que quieres eliminar al proveedor <strong>{{ object.nombre }}</strong>?</p>
+            <p>Esta acción no se puede deshacer.</p>
+        </div>
+        <form method="post">
+            {# {% csrf_token %} #} <!-- No longer needed for this exempt view -->
+            <button type="submit" class="btn btn-danger">Confirmar Eliminación</button>
+            <a href="{% url 'proveedor-list' %}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
